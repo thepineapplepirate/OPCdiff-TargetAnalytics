@@ -1,0 +1,54 @@
+{
+  "replicas": 3,
+  "metas": [
+    {
+      "final_frame": 5001,
+      "initial_frame": 0,
+      "distance_cutoff": 3.5,
+      "angle_cutoff": 120.0,
+      "selection1": "protein",
+      "selection2": "resname UNL"
+    },
+    {
+      "final_frame": 5001,
+      "initial_frame": 0,
+      "distance_cutoff": 3.5,
+      "angle_cutoff": 120.0,
+      "selection1": "protein",
+      "selection2": "resname UNL"
+    },
+    {
+      "final_frame": 5001,
+      "initial_frame": 0,
+      "distance_cutoff": 3.5,
+      "angle_cutoff": 120.0,
+      "selection1": "protein",
+      "selection2": "resname UNL"
+    }
+  ],
+  "config": {
+    "OCC_ERR": "SEM",
+    "TS_ERR": "SD",
+    "Y_AXIS_LIMITS": null,
+    "RENAMES_JSON": "../ortho_resname_dict.json",
+    "ANNOTATE_MA_MEAN": true,
+    "ANNOTATE_MA_FMT": "{:.2f}",
+    "RESIDUE_RENAMES": {
+      "UNL303-Side": "CN045"
+    }
+  },
+  "timeseries_mean_stats": {
+    "n_frames": 5002,
+    "hbonds_mean_overall": 10.455817672930827,
+    "hbonds_final_mean_ma": 10.453325108174154,
+    "hbonds_final_mean_raw": 10.455817672930827
+  },
+  "occupancy_top_pair": {
+    "pair": "ARG250-Side \u2192 UNL303-Side",
+    "pair_renamed": "Arg381-Side \u2192 UNL303-Side",
+    "mean_pct": 122.24333333333334,
+    "sd_pct": 94.59218219986963,
+    "sem_pct": 54.61282185632886,
+    "n": 3
+  }
+}

@@ -1,0 +1,756 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "docking",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "protein with co-crystalized ligand"
+                }
+            ],
+            "label": "protein with co-crystalized ligand",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 477.671875,
+                "height": 82.171875,
+                "left": 472,
+                "right": 672,
+                "top": 395.5,
+                "width": 200,
+                "x": 472,
+                "y": 395.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "45139f0d-f485-4451-8ec9-6a6296c56fe7",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "protonated ligand to be docked"
+                }
+            ],
+            "label": "protonated ligand to be docked",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 774.671875,
+                "height": 82.171875,
+                "left": 1028.03125,
+                "right": 1228.03125,
+                "top": 692.5,
+                "width": 200,
+                "x": 1028.03125,
+                "y": 692.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "62b385b3-8db8-495c-91de-22237870181d",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "infile": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "grep ligand",
+            "name": "Search in textfiles",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 482.65625,
+                "height": 93.171875,
+                "left": 750,
+                "right": 950,
+                "top": 389.484375,
+                "width": 200,
+                "x": 750,
+                "y": 389.484375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "f46f0e4f75c4",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"case_sensitive\": \"-i\", \"color\": \"NOCOLOR\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"-v\", \"lines_after\": \"0\", \"lines_before\": \"0\", \"regex_type\": \"-P\", \"url_paste\": \"ATOM\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "2e43e824-954b-491c-920d-14cab95d2ee6",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "52b52d4d-beaf-4df8-a0e2-bb87e896562b"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "infile": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "grep protein",
+            "name": "Search in textfiles",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 613.671875,
+                "height": 93.171875,
+                "left": 750,
+                "right": 950,
+                "top": 520.5,
+                "width": 200,
+                "x": 750,
+                "y": 520.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "f46f0e4f75c4",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"case_sensitive\": \"-i\", \"color\": \"NOCOLOR\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"lines_after\": \"0\", \"lines_before\": \"0\", \"regex_type\": \"-P\", \"url_paste\": \"ATOM\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "5b440cb4-1380-4bcc-b6f2-567648229c73",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "b0b7f025-1d4a-4916-92e7-cd2ca4c7770a"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "infile": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 820.234375,
+                "height": 174.734375,
+                "left": 1306.03125,
+                "right": 1506.03125,
+                "top": 645.5,
+                "width": 200,
+                "x": 1306.03125,
+                "y": 645.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"pdb\", \"appendtotitle\": \"\", \"chromInfo\": \"/data/home/raubenb/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"sdf\", \"__current_case__\": 58, \"sdf_exp_h\": \"false\", \"sdf_no_prop\": \"false\", \"sdf_wedge_bonds\": \"false\", \"sdf_alias_out\": \"false\", \"gen2d\": \"false\", \"gen3d\": \"false\"}, \"ph\": \"-1.0\", \"remove_h\": \"false\", \"split\": \"false\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "0876a7c9-ac20-49ff-bc0c-5ea662e9d67e",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "a5cc65db-3fed-4aae-ab24-0e06ef59da06"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "infile": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 523.234375,
+                "height": 174.734375,
+                "left": 1028.03125,
+                "right": 1228.03125,
+                "top": 348.5,
+                "width": 200,
+                "x": 1028.03125,
+                "y": 348.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"pdb\", \"appendtotitle\": \"\", \"chromInfo\": \"/data/home/raubenb/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"sdf\", \"__current_case__\": 58, \"sdf_exp_h\": \"false\", \"sdf_no_prop\": \"false\", \"sdf_wedge_bonds\": \"false\", \"sdf_alias_out\": \"false\", \"gen2d\": \"false\", \"gen3d\": \"false\"}, \"ph\": \"7.4\", \"remove_h\": \"false\", \"split\": \"false\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "210b1620-fbc7-4f1d-bf5c-f4cb785e6e08",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "3660d22a-a1a4-43a2-9764-cf9b7bd01a3c"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_receptor/prepare_receptor/1.5.7+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "receptor": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Prepare receptor",
+            "outputs": [
+                {
+                    "name": "file_output",
+                    "type": "pdbqt"
+                }
+            ],
+            "position": {
+                "bottom": 654.671875,
+                "height": 93.171875,
+                "left": 1028.03125,
+                "right": 1228.03125,
+                "top": 561.5,
+                "width": 200,
+                "x": 1028.03125,
+                "y": 561.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_receptor/prepare_receptor/1.5.7+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "05a13d377b28",
+                "name": "autodock_vina_prepare_receptor",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"receptor\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.5.7+galaxy0",
+            "type": "tool",
+            "uuid": "dc90190f-08d0-49a6-9877-cd5e2b5da677",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "file_output",
+                    "uuid": "3ce7c50c-1d55-4a77-b5d9-3d0642e743bf"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_box/prepare_box/2021.03.5+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "ligand": {
+                    "id": 5,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Calculate the box parameters using RDKit",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 376.0625,
+                "height": 113.5625,
+                "left": 1306.03125,
+                "right": 1506.03125,
+                "top": 262.5,
+                "width": 200,
+                "x": 1306.03125,
+                "y": 262.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina_prepare_box/prepare_box/2021.03.5+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "8f766d9652a2",
+                "name": "autodock_vina_prepare_box",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"sdf\", \"bufx\": \"5.0\", \"bufy\": \"5.0\", \"bufz\": \"5.0\", \"chromInfo\": \"/data/home/raubenb/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"exh\": null, \"ligand\": {\"__class__\": \"ConnectedValue\"}, \"seed_value\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2021.03.5+galaxy0",
+            "type": "tool",
+            "uuid": "280bd7e8-2cdd-4aa2-b8a4-bc85570e19f3",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "9861714b-bf4c-429c-9d76-fa93c935d3f1"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "infile": {
+                    "id": 5,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 589.21875,
+                "height": 174.734375,
+                "left": 1306.03125,
+                "right": 1506.03125,
+                "top": 414.484375,
+                "width": 200,
+                "x": 1306.03125,
+                "y": 414.484375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"sdf\", \"appendtotitle\": \"\", \"chromInfo\": \"/data/home/raubenb/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"smi\", \"__current_case__\": 59, \"smi_exp_h\": \"false\", \"smi_iso_chi\": \"false\", \"smi_rad\": \"false\", \"smi_atomclass_out\": \"false\", \"smi_can\": \"false\", \"smi_coordinates\": \"false\"}, \"ph\": \"-1.0\", \"remove_h\": \"false\", \"split\": \"false\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "782bbd62-fde7-4538-b4d5-e606c2e34b63",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "abfc812d-c8c0-4246-9aca-c699e3e1832e"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.2.3+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "config_params|box": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "ligands": {
+                    "id": 4,
+                    "output_name": "outfile"
+                },
+                "receptor": {
+                    "id": 6,
+                    "output_name": "file_output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "VINA Docking",
+            "outputs": [
+                {
+                    "name": "sdf_outputs",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 733.234375,
+                "height": 204.734375,
+                "left": 1584.03125,
+                "right": 1784.03125,
+                "top": 528.5,
+                "width": 200,
+                "x": 1584.03125,
+                "y": 528.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/autodock_vina/docking/1.2.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "90ea16534012",
+                "name": "autodock_vina",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"pdbqt\", \"chromInfo\": \"/data/home/raubenb/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"config_params\": {\"config_params\": \"file\", \"__current_case__\": 1, \"box\": {\"__class__\": \"ConnectedValue\"}, \"exh\": null}, \"flex\": null, \"ligands\": {\"__class__\": \"ConnectedValue\"}, \"output\": \"sdf\", \"ph_value\": \"7.4\", \"receptor\": {\"__class__\": \"ConnectedValue\"}, \"settings\": {\"scoring\": null, \"num_modes\": null, \"min_rmsd\": null, \"energy_range\": null}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.3+galaxy0",
+            "type": "tool",
+            "uuid": "5a3d1dfe-540b-456a-8695-155a24689475",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "sdf_outputs",
+                    "uuid": "878a49d5-db64-4645-b5e8-770111ec9a4e"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "infile": {
+                    "id": 9,
+                    "output_name": "sdf_outputs"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "file_outputs",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 688.0625,
+                "height": 113.5625,
+                "left": 1862.03125,
+                "right": 2062.03125,
+                "top": 574.5,
+                "width": 200,
+                "x": 1862.03125,
+                "y": 574.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"appendtotitle\": \"\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"pdb\", \"__current_case__\": 51}, \"ph\": \"-1.0\", \"remove_h\": \"false\", \"split\": \"true\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "ad43b70b-8137-4fa5-9af4-dbba4d08921a",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "file_outputs",
+                    "uuid": "dd6b9805-31e9-4d77-8da6-a6bf8c80fd61"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_addh/openbabel_addh/3.1.1+galaxy1",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "infile": {
+                    "id": 10,
+                    "output_name": "file_outputs"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Add hydrogen atoms",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 688.0625,
+                "height": 113.5625,
+                "left": 2140.015625,
+                "right": 2340.015625,
+                "top": 574.5,
+                "width": 200,
+                "x": 2140.015625,
+                "y": 574.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_addh/openbabel_addh/3.1.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "6e4b7e0c61a6",
+                "name": "openbabel_addh",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"infile\": {\"__class__\": \"ConnectedValue\"}, \"pH_value\": \"7.4\", \"polar\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy1",
+            "type": "tool",
+            "uuid": "2d0f88c0-0b18-44e5-aba8-e23adea53fa2",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "1a3ee6e0-6fe9-4fe1-9164-6258114a040b"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "infile": {
+                    "id": 11,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 751.234375,
+                "height": 174.734375,
+                "left": 2419.03125,
+                "right": 2619.03125,
+                "top": 576.5,
+                "width": 200,
+                "x": 2419.03125,
+                "y": 576.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutfile": {
+                    "action_arguments": {
+                        "newtype": "mol2"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"appendtotitle\": \"\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"mol2\", \"__current_case__\": 41, \"mol2_ignore_res\": \"false\", \"gen2d\": \"false\", \"gen3d\": \"false\"}, \"ph\": \"-1.0\", \"remove_h\": \"false\", \"split\": \"false\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "38d202e2-f49f-4dc5-973b-e9f3c766e702",
+            "workflow_outputs": [
+                {
+                    "label": "Convert to can from input dataset(s)",
+                    "output_name": "outfile",
+                    "uuid": "d94fbf36-76ff-4892-b716-d5c94f1e0226"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "infile": {
+                    "id": 12,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 553.734375,
+                "height": 174.734375,
+                "left": 2679,
+                "right": 2879,
+                "top": 379,
+                "width": 200,
+                "x": 2679,
+                "y": 379
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutfile": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "outfile"
+                },
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"appendtotitle\": \"\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"pdb\", \"__current_case__\": 51}, \"ph\": \"-1.0\", \"remove_h\": \"false\", \"split\": \"false\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "50e4c6ad-7e91-428a-85d5-c4a6bf5326c5",
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "infile": {
+                    "id": 12,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compound conversion",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 754.734375,
+                "height": 174.734375,
+                "left": 2684,
+                "right": 2884,
+                "top": 580,
+                "width": 200,
+                "x": 2684,
+                "y": 580
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutfile": {
+                    "action_arguments": {
+                        "newtype": "sdf"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/openbabel_compound_convert/openbabel_compound_convert/3.1.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e2c36f62e22f",
+                "name": "openbabel_compound_convert",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"appendtotitle\": \"\", \"dative_bonds\": \"false\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"oformat\": {\"oformat_opts_selector\": \"sdf\", \"__current_case__\": 58, \"sdf_exp_h\": \"false\", \"sdf_no_prop\": \"false\", \"sdf_wedge_bonds\": \"false\", \"sdf_alias_out\": \"false\", \"gen2d\": \"false\", \"gen3d\": \"false\"}, \"ph\": \"-1.0\", \"remove_h\": \"false\", \"split\": \"false\", \"unique\": {\"unique_opts_selector\": \"\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1+galaxy0",
+            "type": "tool",
+            "uuid": "13e0ab6e-7f37-4bf2-bf33-79eb23729a28",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "c3960ad1-b730-4fd2-8382-83189fe64b87"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "29051b33-4afb-4674-bd1a-0ffdc63d6fcc",
+    "version": 12
+}

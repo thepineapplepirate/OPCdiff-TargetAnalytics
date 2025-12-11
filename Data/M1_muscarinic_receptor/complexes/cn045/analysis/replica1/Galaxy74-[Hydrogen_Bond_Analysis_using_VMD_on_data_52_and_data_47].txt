@@ -1,0 +1,62 @@
+/data/home/raubenb/galaxy/database/dependencies/_conda/envs/__vmd@1.9.3/lib/vmd_LINUXAMD64: /lib64/libGL.so.1: no version information available (required by /data/home/raubenb/galaxy/database/dependencies/_conda/envs/__vmd@1.9.3/lib/vmd_LINUXAMD64)
+Info) VMD for LINUXAMD64, version 1.9.3 (November 30, 2016)
+Info) http://www.ks.uiuc.edu/Research/vmd/                         
+Info) Email questions and bug reports to vmd@ks.uiuc.edu           
+Info) Please include this reference in published work using VMD:   
+Info)    Humphrey, W., Dalke, A. and Schulten, K., `VMD - Visual   
+Info)    Molecular Dynamics', J. Molec. Graphics 1996, 14.1, 33-38.
+Info) -------------------------------------------------------------
+Info) Multithreading available, 224 CPUs detected.
+Info)   CPU features: SSE2 AVX AVX2 FMA KNL:AVX-512F+CD+ER+PF 
+Info) Free system memory: 5678GB (93%)
+Info) Creating CUDA device pool and initializing hardware...
+Info) Detected 4 available CUDA accelerators:
+Info) [0] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) [1] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) [2] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) [3] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) Detected 4 available TachyonL/OptiX ray tracing accelerators
+Info)   Compiling 1 OptiX shaders on 4 target GPUs...
+Info) Dynamically loaded 2 plugins in directory:
+Info) /data/home/raubenb/galaxy/database/dependencies/_conda/envs/__vmd@1.9.3/lib/plugins/LINUXAMD64/molfile
+Info) File loading in progress, please wait.
+Info) Using plugin pdb for structure file /data/home/raubenb/galaxy/database/objects/5/1/a/dataset_51a498e7-db42-42be-a4c7-63d2d078b69d.dat
+Info) Using plugin pdb for coordinates from file /data/home/raubenb/galaxy/database/objects/5/1/a/dataset_51a498e7-db42-42be-a4c7-63d2d078b69d.dat
+Info) Determining bond structure from distance search ...
+Info) Finished with coordinate file /data/home/raubenb/galaxy/database/objects/5/1/a/dataset_51a498e7-db42-42be-a4c7-63d2d078b69d.dat.
+Info) Analyzing structure ...
+Info)    Atoms: 70864
+Info)    Bonds: 56675
+Info)    Angles: 0  Dihedrals: 0  Impropers: 0  Cross-terms: 0
+Info)    Bondtypes: 0  Angletypes: 0  Dihedraltypes: 0  Impropertypes: 0
+Info)    Residues: 15110
+Info)    Waters: 0
+Info)    Segments: 1
+Info)    Fragments: 14342   Protein: 1   Nucleic: 0
+dcdplugin) detected standard 32-bit DCD file of native endianness
+dcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)
+Info) Using plugin dcd for coordinates from file /data/home/raubenb/galaxy/database/objects/c/9/b/dataset_c9be6f77-5c4c-45f2-a4b7-4f9fcd6132ff.dat
+Info) Coordinate I/O rate 1172.3 frames/sec, 950 MB/sec, 4.3 sec
+Info) Finished with coordinate file /data/home/raubenb/galaxy/database/objects/c/9/b/dataset_c9be6f77-5c4c-45f2-a4b7-4f9fcd6132ff.dat.
+atomselect0
+atomselect1
+H-Bonds Plugin, Version 1.1
+Tue Mar 05 20:37:24 EST 2024
+
+Parameters used in the calculation of hydrogen bonds:
+- Atomselection 1: protein
+- Atomselection 2: resname UNL
+- Update selections every frame: yes
+- Initial frame: 0
+- Frame step: 1
+- Final frame: 5001
+- Donor-Acceptor distance: 3.5
+- Angle cutoff: 120.0
+- Type: all
+- Write a file with H bond/frame data: yes
+- Filename: hbond.txt
+- Details output file: detail.txt
+
+Printing frame/hbond data to file... Done.
+Info) VMD for LINUXAMD64, version 1.9.3 (November 30, 2016)
+Info) Exiting normally.

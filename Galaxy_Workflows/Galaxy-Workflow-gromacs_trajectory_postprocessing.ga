@@ -1,0 +1,279 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "gromacs_trajectory_postprocessing",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "trr trajectory"
+                }
+            ],
+            "label": "trr trajectory",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 504.359375,
+                "height": 61.78125,
+                "left": 467.671875,
+                "right": 667.671875,
+                "top": 442.578125,
+                "width": 200,
+                "x": 467.671875,
+                "y": 442.578125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "aab7e730-8081-4e64-987c-c9beab0dfc22",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "tpr file"
+                }
+            ],
+            "label": "tpr file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 615.375,
+                "height": 61.78125,
+                "left": 469.171875,
+                "right": 669.171875,
+                "top": 553.59375,
+                "width": 200,
+                "x": 469.171875,
+                "y": 553.59375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"tpr\"], \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2b542885-a376-44c8-8577-6c70a76230f8",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_trj/gmx_trj/2022+galaxy2",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "trj|str_input": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "trj|trj_input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Modify/convert and concatate GROMACS trajectories",
+                    "name": "trj"
+                }
+            ],
+            "label": null,
+            "name": "Modify/convert and concatate GROMACS trajectories",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "xtc"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 709.5,
+                "height": 265.90625,
+                "left": 699.65625,
+                "right": 899.65625,
+                "top": 443.59375,
+                "width": 200,
+                "x": 699.65625,
+                "y": 443.59375
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionreport": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_trj/gmx_trj/2022+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "32052c6c3310",
+                "name": "gmx_trj",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"output_format\": \"xtc\", \"time\": {\"b\": \"0\", \"e\": \"-1\", \"dt\": \"0\"}, \"trj\": {\"trj_op\": \"trjconv\", \"__current_case__\": 0, \"trj_input\": {\"__class__\": \"ConnectedValue\"}, \"str_input\": {\"__class__\": \"ConnectedValue\"}, \"ndx_input\": {\"__class__\": \"RuntimeValue\"}, \"index_output\": \"0\", \"index_center\": \"\", \"sep\": \"\", \"pbc\": {\"pbc\": \"nojump\", \"__current_case__\": 5}, \"ur\": \"none\", \"skip\": \"1\", \"boxcenter\": \"none\", \"fit\": {\"fit\": \"none\", \"__current_case__\": 0}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy2",
+            "type": "tool",
+            "uuid": "5bdb720a-ade4-4dce-bae8-7b0e7cac336a",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_trj/gmx_trj/2022+galaxy2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "trj|str_input": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "trj|trj_input": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Modify/convert and concatate GROMACS trajectories",
+                    "name": "trj"
+                }
+            ],
+            "label": null,
+            "name": "Modify/convert and concatate GROMACS trajectories",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "xtc"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 716.5,
+                "height": 265.90625,
+                "left": 965.671875,
+                "right": 1165.671875,
+                "top": 450.59375,
+                "width": 200,
+                "x": 965.671875,
+                "y": 450.59375
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                },
+                "HideDatasetActionreport": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_trj/gmx_trj/2022+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "32052c6c3310",
+                "name": "gmx_trj",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"output_format\": \"xtc\", \"time\": {\"b\": \"0\", \"e\": \"-1\", \"dt\": \"0\"}, \"trj\": {\"trj_op\": \"trjconv\", \"__current_case__\": 0, \"trj_input\": {\"__class__\": \"ConnectedValue\"}, \"str_input\": {\"__class__\": \"ConnectedValue\"}, \"ndx_input\": {\"__class__\": \"RuntimeValue\"}, \"index_output\": \"0\", \"index_center\": \"3\", \"sep\": \"\", \"pbc\": {\"pbc\": \"mol\", \"__current_case__\": 2}, \"ur\": \"compact\", \"skip\": \"1\", \"boxcenter\": \"none\", \"fit\": {\"fit\": \"none\", \"__current_case__\": 0}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy2",
+            "type": "tool",
+            "uuid": "10942196-f091-483b-857e-ce47c076a495",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_trj/gmx_trj/2022+galaxy2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "trj|str_input": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "trj|trj_input": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Modify/convert and concatate GROMACS trajectories",
+                    "name": "trj"
+                }
+            ],
+            "label": "fixed.xtc",
+            "name": "Modify/convert and concatate GROMACS trajectories",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "xtc"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 676.71875,
+                "height": 225.125,
+                "left": 1204.671875,
+                "right": 1404.671875,
+                "top": 451.59375,
+                "width": 200,
+                "x": 1204.671875,
+                "y": 451.59375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_trj/gmx_trj/2022+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "32052c6c3310",
+                "name": "gmx_trj",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"output_format\": \"xtc\", \"time\": {\"b\": \"0\", \"e\": \"-1\", \"dt\": \"0\"}, \"trj\": {\"trj_op\": \"trjconv\", \"__current_case__\": 0, \"trj_input\": {\"__class__\": \"ConnectedValue\"}, \"str_input\": {\"__class__\": \"ConnectedValue\"}, \"ndx_input\": {\"__class__\": \"RuntimeValue\"}, \"index_output\": \"0\", \"index_center\": \"\", \"sep\": \"\", \"pbc\": {\"pbc\": \"none\", \"__current_case__\": 1}, \"ur\": \"none\", \"skip\": \"10\", \"boxcenter\": \"none\", \"fit\": {\"fit\": \"rot+trans\", \"__current_case__\": 1, \"index_fit\": \"3\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy2",
+            "type": "tool",
+            "uuid": "ab601978-5041-4020-ae71-6d9517a52a37",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "4a2a2067-3798-4c11-b3d6-f02b47e9df5c"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "17b726f0-43a5-4a0b-a4d7-009d89af9768"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "0141801c-f339-40e1-bc1e-9cd0f097ff70",
+    "version": 14
+}

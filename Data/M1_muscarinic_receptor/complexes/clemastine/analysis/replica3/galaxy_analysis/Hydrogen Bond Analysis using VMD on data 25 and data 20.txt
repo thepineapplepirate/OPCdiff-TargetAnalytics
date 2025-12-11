@@ -1,0 +1,70 @@
+/data/home/raubenb/galaxy/database/dependencies/_conda/envs/__vmd@1.9.3/lib/vmd_LINUXAMD64: /lib64/libGL.so.1: no version information available (required by /data/home/raubenb/galaxy/database/dependencies/_conda/envs/__vmd@1.9.3/lib/vmd_LINUXAMD64)
+Info) VMD for LINUXAMD64, version 1.9.3 (November 30, 2016)
+Info) http://www.ks.uiuc.edu/Research/vmd/                         
+Info) Email questions and bug reports to vmd@ks.uiuc.edu           
+Info) Please include this reference in published work using VMD:   
+Info)    Humphrey, W., Dalke, A. and Schulten, K., `VMD - Visual   
+Info)    Molecular Dynamics', J. Molec. Graphics 1996, 14.1, 33-38.
+Info) -------------------------------------------------------------
+Info) Multithreading available, 224 CPUs detected.
+Info)   CPU features: SSE2 AVX AVX2 FMA KNL:AVX-512F+CD+ER+PF 
+Info) Free system memory: 5741GB (94%)
+Info) Creating CUDA device pool and initializing hardware...
+Info) Detected 4 available CUDA accelerators:
+Info) [0] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) [1] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) [2] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) [3] NVIDIA A100-PCIE-40GB 108 SM_8.0 @ 1.41 GHz, 39GB RAM, AE3, ZCP
+Info) Detected 4 available TachyonL/OptiX ray tracing accelerators
+Info)   Compiling 1 OptiX shaders on 4 target GPUs...
+Info) Dynamically loaded 2 plugins in directory:
+Info) /data/home/raubenb/galaxy/database/dependencies/_conda/envs/__vmd@1.9.3/lib/plugins/LINUXAMD64/molfile
+Info) File loading in progress, please wait.
+Info) Using plugin pdb for structure file /data/home/raubenb/galaxy/database/objects/5/3/7/dataset_537dfc20-5e80-421f-887a-6efb19a244a5.dat
+Info) Using plugin pdb for coordinates from file /data/home/raubenb/galaxy/database/objects/5/3/7/dataset_537dfc20-5e80-421f-887a-6efb19a244a5.dat
+Info) Determining bond structure from distance search ...
+Info) Finished with coordinate file /data/home/raubenb/galaxy/database/objects/5/3/7/dataset_537dfc20-5e80-421f-887a-6efb19a244a5.dat.
+Info) Analyzing structure ...
+Info)    Atoms: 80250
+Info)    Bonds: 61841
+Info)    Angles: 0  Dihedrals: 0  Impropers: 0  Cross-terms: 0
+Info)    Bondtypes: 0  Angletypes: 0  Dihedraltypes: 0  Impropertypes: 0
+Info)    Residues: 18934
+Info)    Waters: 0
+Warning) Unusual bond between residues:  279 (protein) and 280 (none)
+Warning) Unusual bond between residues:  280 (none) and 281 (protein)
+Warning) Unusual bond between residues:  315 (protein) and 316 (none)
+Warning) Unusual bond between residues:  316 (none) and 317 (protein)
+Warning) Unusual bond between residues:  317 (protein) and 318 (none)
+Warning) Unusual bond between residues:  318 (none) and 319 (protein)
+Warning) Unusual bond between residues:  319 (protein) and 320 (none)
+Warning) Unusual bond between residues:  320 (none) and 321 (protein)
+Info)    Segments: 1
+Info)    Fragments: 18495   Protein: 9   Nucleic: 0
+dcdplugin) detected standard 32-bit DCD file of native endianness
+dcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)
+Info) Using plugin dcd for coordinates from file /data/home/raubenb/galaxy/database/objects/8/8/3/dataset_8836feb7-5658-4005-b5a3-83b198205ccb.dat
+Info) Coordinate I/O rate 893.4 frames/sec, 820 MB/sec, 5.6 sec
+Info) Finished with coordinate file /data/home/raubenb/galaxy/database/objects/8/8/3/dataset_8836feb7-5658-4005-b5a3-83b198205ccb.dat.
+atomselect0
+atomselect1
+H-Bonds Plugin, Version 1.1
+Thu Jul 17 12:43:20 EDT 2025
+
+Parameters used in the calculation of hydrogen bonds:
+- Atomselection 1: protein
+- Atomselection 2: resname UNL
+- Update selections every frame: yes
+- Initial frame: 0
+- Frame step: 1
+- Final frame: 5001
+- Donor-Acceptor distance: 3.5
+- Angle cutoff: 120.0
+- Type: all
+- Write a file with H bond/frame data: yes
+- Filename: hbond.txt
+- Details output file: detail.txt
+
+Printing frame/hbond data to file... Done.
+Info) VMD for LINUXAMD64, version 1.9.3 (November 30, 2016)
+Info) Exiting normally.

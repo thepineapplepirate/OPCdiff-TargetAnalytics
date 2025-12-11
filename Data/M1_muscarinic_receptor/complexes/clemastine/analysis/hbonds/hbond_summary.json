@@ -1,0 +1,54 @@
+{
+  "replicas": 3,
+  "metas": [
+    {
+      "final_frame": 5001,
+      "initial_frame": 0,
+      "distance_cutoff": 3.5,
+      "angle_cutoff": 120.0,
+      "selection1": "protein",
+      "selection2": "resname UNL"
+    },
+    {
+      "final_frame": 5001,
+      "initial_frame": 0,
+      "distance_cutoff": 3.5,
+      "angle_cutoff": 120.0,
+      "selection1": "protein",
+      "selection2": "resname UNL"
+    },
+    {
+      "final_frame": 5001,
+      "initial_frame": 0,
+      "distance_cutoff": 3.5,
+      "angle_cutoff": 120.0,
+      "selection1": "protein",
+      "selection2": "resname UNL"
+    }
+  ],
+  "config": {
+    "OCC_ERR": "SEM",
+    "TS_ERR": "SD",
+    "Y_AXIS_LIMITS": null,
+    "RENAMES_JSON": "../ortho_resname_dict.json",
+    "ANNOTATE_MA_MEAN": true,
+    "ANNOTATE_MA_FMT": "{:.2f}",
+    "RESIDUE_RENAMES": {
+      "UNL445-Side": "Clema"
+    }
+  },
+  "timeseries_mean_stats": {
+    "n_frames": 5002,
+    "hbonds_mean_overall": 15.641010262561641,
+    "hbonds_final_mean_ma": 15.643964126760864,
+    "hbonds_final_mean_raw": 15.641010262561641
+  },
+  "occupancy_top_pair": {
+    "pair": "UNL445-Side \u2192 TYR87-Side",
+    "pair_renamed": "UNL445-Side \u2192 Tyr106-Side",
+    "mean_pct": 162.5233333333333,
+    "sd_pct": 25.010192588889304,
+    "sem_pct": 14.439641423679623,
+    "n": 3
+  }
+}

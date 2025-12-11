@@ -1,0 +1,31 @@
+=== Selection Audit ===
+Mode: top_k
+Requested K: 20
+Kept: 20
+Use absolute for Top-K: True
+K-th score: 0.002178 kcal/mol
+Dynamic threshold chosen: |mean| ≥ 0.002178 kcal/mol
+
+Kept residues (in plot order):
+  R:A:SER:93
+  R:A:TYR:409
+  R:A:ALA:174
+  R:A:VAL:94
+  R:A:PHE:178
+  R:A:THR:173
+  R:A:LEU:164
+  R:A:TYR:413
+  R:A:ILE:55
+  R:A:SER:90
+  R:A:CYS:412
+  R:A:THR:170
+  R:A:TRP:138
+  R:A:VAL:390
+  R:A:ASN:387
+  R:A:GLN:91
+  R:A:TYR:87
+  R:A:TYR:386
+  R:A:ALA:177
+  R:A:TRP:383
+
+Dropped by selection rule:

@@ -1,0 +1,3 @@
+group,mean,sem,n_residues,pvalue_vs_apo,pvalue_complex1_vs_complex2,significance
+H3-CN045,1.3823750000000001,0.08655038606906212,16,0.09902606072138465,,False
+H3 Unbound (Apo),1.1688541666666667,0.09076433143010366,16,,,False

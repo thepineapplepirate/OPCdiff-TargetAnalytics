@@ -1,0 +1,4 @@
+Replica,Path
+Replica 1,../replica1/mmpbsa/decomp/FINAL_DECOMP_MMPBSA.csv
+Replica 2,../replica2/mmpbsa/decomp/FINAL_DECOMP_MMPBSA.csv
+Replica 3,../replica3/mmpbsa/decomp/FINAL_DECOMP_MMPBSA.csv

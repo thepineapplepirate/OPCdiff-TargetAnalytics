@@ -1,0 +1,60 @@
+                      :-) GROMACS - gmx make_ndx, 2022 (-:
+
+Executable:   /data/home/raubenb/galaxy/database/dependencies/_conda/envs/__gromacs@2022/bin/gmx
+Data prefix:  /data/home/raubenb/gromacs_newcompile/gromacs-2022 (source tree)
+Working dir:  /data/home/raubenb/galaxy/database/jobs_directory/072/72768/working
+Command line:
+  gmx make_ndx -f ./input.gro -o ./ndx.ndx
+
+
+Reading structure file
+
+GROMACS reminds you: "Safety lights are for dudes" (Ghostbusters 2016)
+
+Going to read 0 old index file(s)
+Analysing residue names:
+There are:   444    Protein residues
+There are: 17624      Other residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+  0 System              : 80250 atoms
+  1 Protein             :  7212 atoms
+  2 Protein-H           :  3563 atoms
+  3 C-alpha             :   444 atoms
+  4 Backbone            :  1332 atoms
+  5 MainChain           :  1777 atoms
+  6 MainChain+Cb        :  2198 atoms
+  7 MainChain+H         :  2211 atoms
+  8 SideChain           :  5001 atoms
+  9 SideChain-H         :  1786 atoms
+ 10 Prot-Masses         :  7212 atoms
+ 11 non-Protein         : 73038 atoms
+ 12 Other               : 73038 atoms
+ 13 UNL                 :    50 atoms
+ 14 PA                  : 15088 atoms
+ 15 PC                  :  6232 atoms
+ 16 K+                  :    45 atoms
+ 17 Cl-                 :    62 atoms
+ 18 TP3                 : 51561 atoms
+
+ nr : group      '!': not  'name' nr name   'splitch' nr    Enter: list groups
+ 'a': atom       '&': and  'del' nr         'splitres' nr   'l': list residues
+ 't': atom type  '|': or   'keep' nr        'splitat' nr    'h': help
+ 'r': residue              'res' nr         'chain' char
+ "name": group             'case': case sensitive           'q': save and quit
+ 'ri': residue index
+
+> 
+Merged two groups with OR: 12 21 -> 33
+Merged two groups with OR: 33 11 -> 44
+Merged two groups with OR: 44 24 -> 68
+Merged two groups with OR: 68 14 -> 82
+Merged two groups with OR: 82 21 -> 103
+Merged two groups with OR: 103 14 -> 117
+Merged two groups with OR: 117 21 -> 138
+Merged two groups with OR: 138 21 -> 159
+
+ 19 r_86_r_87_r_90_r_138_r_170_r_386_r_387_r_409_r_413:   159 atoms
+
+> 

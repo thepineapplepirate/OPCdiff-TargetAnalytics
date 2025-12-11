@@ -1,0 +1,9 @@
+Radius of Gyration on data 64, data 4, and data 28 (4).tabular is rg of clemastine
+Radius of Gyration on data 64, data 4, and data 28.tabular is rg of all ca
+RMSD raw data.tabular is rmsd of clemastine
+RMSD raw data (3).tabular is rmsd of all ca
+orthores list starts with 86, allores starts with 63
+GROMACS calculation of RMSF on data 64, data 4, and data 63.xvg is RMSF of allosteric residues
+GROMACS calculation of RMSF on data 66, data 4, and data 63.xvg is RMSF of orthosteric residues
+Create GROMACS index files on data 4.ndx is orthores index
+Create GROMACS index files on data 4 (6).ndx is allores index

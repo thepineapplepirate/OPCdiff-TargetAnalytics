@@ -1,0 +1,6 @@
+GROMACS calculation of RMSF on data 22, data 6, and data 21.xvg is rmsf_allores.xvg
+GROMACS calculation of RMSF on data 24, data 6, and data 21.xvg is rmsf_orthores.xvg
+RMSD raw data.tabular is rmsd_clem.tabular
+RMSD raw data (3).tabular is rmsd_ca.tabular
+Radius of Gyration on data 22, data 6, and data 19.tabular is rg_ca.tabular
+Radius of Gyration on data 22, data 6, and data 19 (4).tabular is rg_clem.tabular

@@ -1,0 +1,914 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "transmembraneprotein_apo__extra_analysis",
+    "steps": {
+        "0": {
+            "annotation": "in xtc or trr format",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "in xtc or trr format",
+                    "name": "postprocessed trajectory file"
+                }
+            ],
+            "label": "postprocessed trajectory file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 590.5403645833334,
+                "height": 61.62890625,
+                "left": 608.484375,
+                "right": 758.484375,
+                "top": 528.9114583333334,
+                "width": 150,
+                "x": 608.484375,
+                "y": 528.9114583333334
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "5faafeff-2c47-434f-b991-8e247aa74cfc",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "Structure file from the initial setup, which serves as a reference frame for the analysis.",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Structure file from the initial setup, which serves as a reference frame for the analysis.",
+                    "name": "gro file from simulation"
+                }
+            ],
+            "label": "gro file from simulation",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 939.5247395833334,
+                "height": 61.62890625,
+                "left": 608.484375,
+                "right": 758.484375,
+                "top": 877.8958333333334,
+                "width": 150,
+                "x": 608.484375,
+                "y": 877.8958333333334
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "e74ed24d-73e5-472c-bda2-4bb05d01d70f",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/md_converter/md_converter/1.9.7+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "MDTraj file converter",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 593.3606770833333,
+                "height": 100.46484375,
+                "left": 886.484375,
+                "right": 1036.484375,
+                "top": 492.8958333333333,
+                "width": 150,
+                "x": 886.484375,
+                "y": 492.8958333333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/md_converter/md_converter/1.9.7+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "be3cb628aa3e",
+                "name": "md_converter",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": \"dcd\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.7+galaxy0",
+            "type": "tool",
+            "uuid": "8786b699-a5d6-4971-bcc5-97e082b825fb",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "a9f5e174-a202-49c0-bf8b-dffef30ba6f6"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "index file for allosteric residues ",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_makendx/gmx_makendx/2022+galaxy0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Create GROMACS index files",
+            "outputs": [
+                {
+                    "name": "ndx",
+                    "type": "ndx"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 788.1536458333334,
+                "height": 123.2578125,
+                "left": 886.484375,
+                "right": 1036.484375,
+                "top": 664.8958333333334,
+                "width": 150,
+                "x": 886.484375,
+                "y": 664.8958333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_makendx/gmx_makendx/2022+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "9acc0fc74373",
+                "name": "gmx_makendx",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"prev_index_cond\": {\"use_prev_index\": \"no\", \"__current_case__\": 1}, \"sel\": \"r63 | r66 | r67 | r158 | r160 | r165 | r393 | r402 | r405 | r406 \", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy0",
+            "type": "tool",
+            "uuid": "bbfb8080-bf63-453c-b2f8-5bcf7df3098f",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "ndx",
+                    "uuid": "1974a1bc-9fea-4778-98b3-0bb8c10c1180"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "56409ad6-8b94-488c-a9fe-3c122f5ab5a7"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "index file for orthosteric residues\n",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_makendx/gmx_makendx/2022+galaxy0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Create GROMACS index files",
+            "outputs": [
+                {
+                    "name": "ndx",
+                    "type": "ndx"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 988.9192708333334,
+                "height": 123.2578125,
+                "left": 886.484375,
+                "right": 1036.484375,
+                "top": 865.6614583333334,
+                "width": 150,
+                "x": 886.484375,
+                "y": 865.6614583333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_makendx/gmx_makendx/2022+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "9acc0fc74373",
+                "name": "gmx_makendx",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"prev_index_cond\": {\"use_prev_index\": \"no\", \"__current_case__\": 1}, \"sel\": \"r86 | r87 | r90 | r138 | r170 | r386 | r387 | r409 | r413\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy0",
+            "type": "tool",
+            "uuid": "0344e755-e350-4a40-b293-de8205cefa7f",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "ndx",
+                    "uuid": "bbaa69bd-4c13-4339-8cbf-af9201de13b1"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "4fd04858-3243-42cc-8bdb-f9638665a4b0"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_editconf/gmx_editconf/2022+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "GROMACS structure configuration",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "gro"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1192.1692708333333,
+                "height": 123.2578125,
+                "left": 886.484375,
+                "right": 1036.484375,
+                "top": 1068.9114583333333,
+                "width": 150,
+                "x": 886.484375,
+                "y": 1068.9114583333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_editconf/gmx_editconf/2022+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "b9e25ec471eb",
+                "name": "gmx_editconf",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"box\": {\"config\": \"false\", \"__current_case__\": 1}, \"capture_log\": \"true\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": \"pdb\", \"renumber\": {\"renum\": \"false\", \"__current_case__\": 1}, \"systemcenter\": {\"recenter\": \"false\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy0",
+            "type": "tool",
+            "uuid": "d934ee2c-20b0-4ead-9ee2-2c7d2875b3f9",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "901a2b5e-4e0b-4d40-ae04-e315e51e3ef0"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "5a014dfc-586e-4c4b-95fd-966aed1a5d32"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/mdanalysis_cosine_analysis/mdanalysis_cosine_analysis/1.0.0+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "trajin": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Cosine Content",
+                    "name": "strin"
+                }
+            ],
+            "label": null,
+            "name": "Cosine Content",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "cosout",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 252.93098958333331,
+                "height": 146.05078125,
+                "left": 1184.46875,
+                "right": 1334.46875,
+                "top": 106.88020833333333,
+                "width": 150,
+                "x": 1184.46875,
+                "y": 106.88020833333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/mdanalysis_cosine_analysis/mdanalysis_cosine_analysis/1.0.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "48d6a6eb438b",
+                "name": "mdanalysis_cosine_analysis",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"components\": \"3\", \"index\": \"3\", \"strin\": {\"__class__\": \"RuntimeValue\"}, \"trajin\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "6a0780f0-b63b-4ef0-b4ea-c8100d2b90f2",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "e0946b71-617c-467c-8be5-194ebb37eecb"
+                },
+                {
+                    "label": null,
+                    "output_name": "cosout",
+                    "uuid": "b283b7a5-6281-4d8e-9c94-089af5972990"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "rmsf allosteric residues",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_rmsf/gmx_rmsf/2022+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "ndx_input": {
+                    "id": 3,
+                    "output_name": "ndx"
+                },
+                "structure_input": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "traj_input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "GROMACS RMSF calculation",
+            "outputs": [
+                {
+                    "name": "rmsf_output",
+                    "type": "xvg"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 723.7630208333334,
+                "height": 199.4296875,
+                "left": 1462.328125,
+                "right": 1612.328125,
+                "top": 524.3333333333334,
+                "width": 150,
+                "x": 1462.328125,
+                "y": 524.3333333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_rmsf/gmx_rmsf/2022+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "f261fded9631",
+                "name": "gmx_rmsf",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"index\": \"18\", \"ndx_input\": {\"__class__\": \"ConnectedValue\"}, \"outputformat\": \"none\", \"resavg\": \"true\", \"structure_input\": {\"__class__\": \"ConnectedValue\"}, \"traj_input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy0",
+            "type": "tool",
+            "uuid": "2848f365-15b9-4002-89d2-9474bfcce4ef",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "rmsf_output",
+                    "uuid": "2d3db4fc-8742-4658-85b5-13fdcdc2ab6d"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "479a6cb3-5d26-46c2-bfda-e8b8c8db9b48"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "rmsf orthosteric residues",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_rmsf/gmx_rmsf/2022+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "ndx_input": {
+                    "id": 4,
+                    "output_name": "ndx"
+                },
+                "structure_input": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "traj_input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "GROMACS RMSF calculation",
+            "outputs": [
+                {
+                    "name": "rmsf_output",
+                    "type": "xvg"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 731.3411458333334,
+                "height": 199.4296875,
+                "left": 1185.765625,
+                "right": 1335.765625,
+                "top": 531.9114583333334,
+                "width": 150,
+                "x": 1185.765625,
+                "y": 531.9114583333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/gmx_rmsf/gmx_rmsf/2022+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "f261fded9631",
+                "name": "gmx_rmsf",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"capture_log\": \"true\", \"index\": \"18\", \"ndx_input\": {\"__class__\": \"ConnectedValue\"}, \"outputformat\": \"none\", \"resavg\": \"true\", \"structure_input\": {\"__class__\": \"ConnectedValue\"}, \"traj_input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022+galaxy0",
+            "type": "tool",
+            "uuid": "d60e9dbe-535a-4d07-bd0a-bbac53206583",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "rmsf_output",
+                    "uuid": "def7a66d-500f-4e82-8965-5d43415f328b"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "d786169b-6068-49ad-a56f-1d98d3f35246"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca_visualize/bio3d_pca_visualize/2.3.4",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "dcdin": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "pdbin": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "PCA visualization",
+            "outputs": [
+                {
+                    "name": "pdbout",
+                    "type": "pdb"
+                }
+            ],
+            "position": {
+                "bottom": 447.8606770833333,
+                "height": 107.96484375,
+                "left": 1184.46875,
+                "right": 1334.46875,
+                "top": 339.8958333333333,
+                "width": 150,
+                "x": 1184.46875,
+                "y": 339.8958333333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca_visualize/bio3d_pca_visualize/2.3.4",
+            "tool_shed_repository": {
+                "changeset_revision": "f61a718993fd",
+                "name": "bio3d_pca_visualize",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dcdin\": {\"__class__\": \"ConnectedValue\"}, \"method\": \"false\", \"pc_id\": \"1\", \"pca\": {\"sele\": \"calpha\", \"__current_case__\": 0}, \"pdbin\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.3.4",
+            "type": "tool",
+            "uuid": "96bc472a-bc82-444d-94bb-05ab6136155d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "pdbout",
+                    "uuid": "d7e83971-eef6-4e33-9c31-5511064f74ca"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsd/bio3d_rmsd/2.3.4",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "dcdin": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "pdbin": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "RMSD Analysis",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "rmsd_plot",
+                    "type": "png"
+                },
+                {
+                    "name": "rmsd_hist_plot",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 979.4466145833334,
+                "height": 153.55078125,
+                "left": 1184.46875,
+                "right": 1334.46875,
+                "top": 825.8958333333334,
+                "width": 150,
+                "x": 1184.46875,
+                "y": 825.8958333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsd/bio3d_rmsd/2.3.4",
+            "tool_shed_repository": {
+                "changeset_revision": "77e28e1da9f4",
+                "name": "bio3d_rmsd",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dcdin\": {\"__class__\": \"ConnectedValue\"}, \"pdbin\": {\"__class__\": \"ConnectedValue\"}, \"rmsd\": {\"sele\": \"calpha\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.3.4",
+            "type": "tool",
+            "uuid": "16cfd6d1-cd04-41aa-9854-ef0d8a5f5be2",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "67bcf9c0-08ee-4fdc-b808-b150632d605f"
+                },
+                {
+                    "label": null,
+                    "output_name": "rmsd_plot",
+                    "uuid": "91818764-a2c1-4d6e-8c5f-c02b4f42cc15"
+                },
+                {
+                    "label": null,
+                    "output_name": "rmsd_hist_plot",
+                    "uuid": "d173e69a-7bcd-4606-9008-9a571503bf63"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsf/bio3d_rmsf/2.3.4",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "dcdin": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "pdbin": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "RMSF Analysis",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "rmsf_plot",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 1184.3763020833333,
+                "height": 115.46484375,
+                "left": 1184.46875,
+                "right": 1334.46875,
+                "top": 1068.9114583333333,
+                "width": 150,
+                "x": 1184.46875,
+                "y": 1068.9114583333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_rmsf/bio3d_rmsf/2.3.4",
+            "tool_shed_repository": {
+                "changeset_revision": "6bcb804a54c3",
+                "name": "bio3d_rmsf",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dcdin\": {\"__class__\": \"ConnectedValue\"}, \"pdbin\": {\"__class__\": \"ConnectedValue\"}, \"rmsf\": {\"sele\": \"calpha\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.3.4",
+            "type": "tool",
+            "uuid": "3603f066-cd1f-4946-be76-cc62620cb490",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "e2e810a2-7fc5-4240-aea0-203b7607f64c"
+                },
+                {
+                    "label": null,
+                    "output_name": "rmsf_plot",
+                    "uuid": "99d6024f-5741-4849-897a-5bb477c8e353"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "allosteric residues",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/vmd_hbonds/vmd_hbonds/1.9.3",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "strin": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "trajin": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Hydrogen Bond Analysis using VMD",
+            "outputs": [
+                {
+                    "name": "detail",
+                    "type": "txt"
+                },
+                {
+                    "name": "hbond",
+                    "type": "txt"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1021.0169270833334,
+                "height": 184.13671875,
+                "left": 1496.5,
+                "right": 1646.5,
+                "top": 836.8802083333334,
+                "width": 150,
+                "x": 1496.5,
+                "y": 836.8802083333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/vmd_hbonds/vmd_hbonds/1.9.3",
+            "tool_shed_repository": {
+                "changeset_revision": "8aa5e465b043",
+                "name": "vmd_hbonds",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"angle\": \"20.0\", \"distance\": \"3.0\", \"molid\": \"0\", \"sele1\": \"segid PRO\", \"sele2\": \"resid 63 66 67 158 160 165 393 402 405 406\", \"strin\": {\"__class__\": \"ConnectedValue\"}, \"trajin\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.3",
+            "type": "tool",
+            "uuid": "b89c62d3-5cfc-4d63-a829-9517dcf963f3",
+            "workflow_outputs": [
+                {
+                    "label": "Percentage occupancy of the H-bond",
+                    "output_name": "detail",
+                    "uuid": "8d2bcd0e-551a-4854-b74c-3d98103d31f0"
+                },
+                {
+                    "label": "Number of H-bonds",
+                    "output_name": "hbond",
+                    "uuid": "fc580a48-1846-428e-a361-ada5383304cf"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "cf6900ab-6013-45ad-b455-1f10d2c7d4fd"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca/bio3d_pca/2.3.4",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "dcdin": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "pdbin": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "PCA",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "pca_plot",
+                    "type": "png"
+                },
+                {
+                    "name": "pca_cluster",
+                    "type": "png"
+                },
+                {
+                    "name": "pc1_rmsf",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 1421.9622395833333,
+                "height": 161.05078125,
+                "left": 1184.46875,
+                "right": 1334.46875,
+                "top": 1260.9114583333333,
+                "width": 150,
+                "x": 1184.46875,
+                "y": 1260.9114583333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/bio3d_pca/bio3d_pca/2.3.4",
+            "tool_shed_repository": {
+                "changeset_revision": "24867ab16f36",
+                "name": "bio3d_pca",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dcdin\": {\"__class__\": \"ConnectedValue\"}, \"method\": \"false\", \"pca\": {\"sele\": \"calpha\", \"__current_case__\": 0}, \"pdbin\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.3.4",
+            "type": "tool",
+            "uuid": "2cda0fa8-1cb1-4fa0-9f87-e94899305fd4",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "04901a38-17b7-413e-9ae8-04572d06363f"
+                },
+                {
+                    "label": null,
+                    "output_name": "pca_plot",
+                    "uuid": "9235b0ed-9946-4696-b092-b4b76d2853ea"
+                },
+                {
+                    "label": null,
+                    "output_name": "pca_cluster",
+                    "uuid": "89ee0a55-bf7e-4abf-ac76-0d419ee2ca78"
+                },
+                {
+                    "label": null,
+                    "output_name": "pc1_rmsf",
+                    "uuid": "532f3fc4-d38e-427b-9d38-f0611e05b202"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "orthosteric residues",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/chemteam/vmd_hbonds/vmd_hbonds/1.9.3",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "strin": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "trajin": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Hydrogen Bond Analysis using VMD",
+            "outputs": [
+                {
+                    "name": "detail",
+                    "type": "txt"
+                },
+                {
+                    "name": "hbond",
+                    "type": "txt"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1022.7513020833334,
+                "height": 184.13671875,
+                "left": 1754.75,
+                "right": 1904.75,
+                "top": 838.6145833333334,
+                "width": 150,
+                "x": 1754.75,
+                "y": 838.6145833333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/chemteam/vmd_hbonds/vmd_hbonds/1.9.3",
+            "tool_shed_repository": {
+                "changeset_revision": "8aa5e465b043",
+                "name": "vmd_hbonds",
+                "owner": "chemteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"angle\": \"20.0\", \"distance\": \"3.0\", \"molid\": \"0\", \"sele1\": \"segid PRO\", \"sele2\": \"resid 86 87 90 138 170 386 387 409 413\", \"strin\": {\"__class__\": \"ConnectedValue\"}, \"trajin\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.3",
+            "type": "tool",
+            "uuid": "6c7848bb-ccfb-47f1-9714-4f2b122aa88d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "detail",
+                    "uuid": "fea7323c-3c8f-401e-bad8-dcc2ba5196d1"
+                },
+                {
+                    "label": null,
+                    "output_name": "hbond",
+                    "uuid": "52e1e4a8-6884-426a-89dc-9689b567e760"
+                },
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "1c03947e-667e-4cba-870e-f3be6ef27f49"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "26efa451-bc65-4b69-9a9c-2c0e7686b08d",
+    "version": 3
+}
